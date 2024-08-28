@@ -63,13 +63,12 @@ int play_again(int player){
     char mark,again[10];
     player=(player%2)?1:2;
     mark=(player%2)?'X':'O';
+    banana:
     cout<<"Player "<<player<<" enter your choice: ";
     cin>>choice;
-    reserved(choice);
     if (reserved(choice)==2){
       cout<<"\nSPACE ALREADY OCCUPIED!\n"<<endl;
-      cout<<"Player "<<player<<" enter your choice: ";  
-      cin>>choice;
+      goto banana;
     }
     marking(mark,choice,player);
     if (marking(mark,choice,player)==1){
